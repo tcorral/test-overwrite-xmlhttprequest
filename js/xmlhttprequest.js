@@ -70,5 +70,5 @@ function ajax(url, data, fn) {
 var x = {myData: 1};
 
 ajax("/echo/json/", "json=" + encodeURIComponent(JSON.stringify(x)) + "&delay=1", function(req) {
-  log("modified ajax response" + req.responseText);
+  console.log("modified ajax response" + req.responseText);
 });
