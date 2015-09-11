@@ -54,21 +54,3 @@
       });
   }
 })();
-
-// my own little plain javascript ajax function
-function ajax(url, data, fn) {
-  var request = new XMLHttpRequest();
-  request.onreadystatechange = function() {
-    if (this.readyState == 4) {
-      fn(this);
-    }
-  }
-  request.open("POST", url, true);
-  request.send(data);
-}
-
-var x = {myData: 1};
-
-ajax("/echo/json/", "json=" + encodeURIComponent(JSON.stringify(x)) + "&delay=1", function(req) {
-  console.log("modified ajax response" + req.responseText);
-});
